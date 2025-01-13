@@ -1,33 +1,81 @@
-"""
-Rectangular Prism Object
-Create a class that creates a rectangular prism.  You should be able to set all of the important measurements (l,w,h) when the object is instantiated in the constructor and you should have class methods that determine the surface area and volume.
-You should have class methods that also allow you to change the dimensions of the object.
-Instantiate 3 separate rectangular prisms with the test data given, and check the assertions are correct.
-"""
+#!python3
 
-class rectPrism:
+class quadratic:
+    a = 0
+    b = 0
+    c = 0
+    roots = []
 
-    def __init__(self):
-        # note you will need to specify more input parameters
+    def discriminant():
+        # requires no positional arguments
+        # will make use of class properties a,b and c 
+        # to determine the discriminant which is calculated as 
+        # b^2 - 4ac
+        # return value should be a float type decimal
         pass
-
-    def volume(self):
         return
     
-    def surfaceArea(self):
+    def hasRealRoots():
+        # requires no positional arguments
+        # will make use of class properties a,b and c 
+        # to determine if the quadratic has real roots
+        # defined when the discriminant is non negative
+        # return value should be True or False
+        pass
         return
 
-# class instances and assertions below:
+    def isFactorable():
+        # requires no positional arguments
+        # will make use of class properties a,b and c 
+        # to determine if the quadratic can be factored
+        # quadratic can be factored if the discriminant is a perfect square
+        # return value is True or False
+        pass
+        return 
+    
+    def calcRoots():
+        # requires no positional arguments
+        # will make use of class properties a,b and c 
+        # to determine the roots of the quadratic if
+        # the quadratic has real roots
+        # should make use of the class methods:
+        # self.hasRealRoots()
+        # self.discriminant
+        # method does not have a return value
+        # but should store the values of the roots in the 
+        # list self.roots
+        # list should be sorted in ascending order
+        # roots should be rounded to 2 decimal places
+        pass
 
-a = rectPrism(l=10,w=2,h=5)
-assert a.volume() == 100
-assert a.surfaceArea() == 160
+    def __init__():
+        # this should require 3 positional arguments and assign the values
+        # to self.a, self.b and self.c
+        pass
 
-b = rectPrism(l=1,w=1,h=1)
-assert b.volume() == 1
-assert b.surfaceArea == 6
 
-c = rectPrism(l=2,w=0,h=10)
-# note the invalid width
-assert c.volume() == None
-assert c.surfaceArea() == None
+
+if __name__ == "__main__":
+    q1 = quadratic(1,4,4)
+    assert q1.isFactorable() == True
+    assert q1.hasRealRoots() == True
+    assert q1.discriminant() == 0
+    assert q1.roots == [-2,-2]
+
+    q2 = quadratic(1,1,-6)
+    assert q2.isFactorable() == True
+    assert q2.hasRealRoots() == True
+    assert q2.discriminant() == 25
+    assert q2.roots == [-3,2]
+
+    q3 = quadratic(1,1,10)
+    assert q3.isFactorable() == False
+    assert q3.hasRealRoots() == False
+    assert q3.discriminant() == -39
+    assert q3.roots == []
+
+    q4 = quadratic(1,10,1)
+    assert q4.isFactorable() == False
+    assert q4.hasRealRoots() == True
+    assert q4.discriminant() == 96
+    assert q4.roots == [-9.90,-0.10]

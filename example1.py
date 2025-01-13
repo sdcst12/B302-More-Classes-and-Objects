@@ -3,43 +3,33 @@
 # Example of a class template and an instantiated object
 import math
 
-class circle:
-    radius = 0
-    diameter = 0
+class argExample:
+    l = 0
+    w = 0
     
-    def calcDiameterToRadius(self):
-        self.radius = self.diameter / 2
+    def inputVals(self):
+        try:
+            tl = input("Enter a value for length:")
+            self.l = float(tl)
+            tw = input("Enter a value for width :")
+            self.w = float(tw)
+        except Exception as e:
+            print("Those numbers are invalid. Try again.\n")
     
-    def calcRadiusToDiameter(self):
-        self.diameter = self.radius * 2
+    def multipleArea(self,multiple):
+        # generates area for a rectangle that is multiple x larger in each dimension
+        temp_length = multiple * self.l
+        temp_width = multiple * self.w
+        temp_area = temp_length * temp_width
+        return temp_area
 
-    def setRadius(self,value):
-        self.radius = value
-        self.calcRadiusToDiameter()
+    def __init__(self):
+        self.inputVals()
 
-    def setDiameter(self,value):
-        self.diameter = value
-        self.calcDiameterToRadius()
-    
-    def area(self):
-        return math.pi * self.radius ** 2
 
-    def circumference(self):
-        return math.pi * self.diameter 
+if __name__ == "__main__":
+    print("\n\n\n\n")
+    example = argExample()
     
-    def __init__(self,r=0,d=0):
-        if r > 0:
-            self.radius = r
-            self.calcRadiusToDiameter()
-        elif d > 0:
-            self.diameter = d
-            self.calcDiameterToRadius()
-        else:
-            print("No valid radius or diameter defined.  Radius or diameter needs to be set.")
-    
-    def __del__(self):
-        print("this object destroyed")
-    
-
-a = circle(r=-1)
-print( a.area() )
+    multiple = 2
+    print(f"The area for a rectangle that is \033[1;32;40m{multiple}\033[0;37;40m times larger in each dimension is \033[1;36;40m{example.multipleArea(multiple)}\033[0;37;40m")
