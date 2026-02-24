@@ -21,6 +21,3 @@ Answer the questions provided in the attached Google Document
 9. How many positional arguments are expected on line 19?
 10.  Notice the use of color.  ANSI escape codes can be used to add color/backgrounds to text.  See https://www.kaggle.com/discussions/general/273188
 
-Task 1:
-Use the comments in the template to create the program that will use the quadratic formula to find out all kinds of things about a quadratic equation in the format:
-ax^2 + bx + c = 0
